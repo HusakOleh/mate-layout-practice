@@ -76,6 +76,7 @@ section, div, img, body, * {
   line-height: 23px;
   text-align: center;
   color: #2F4F4F;
+  font-weight: bold;
 }
 .person__details--extra {
   font-size: 18px;
