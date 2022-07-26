@@ -1,0 +1,108 @@
+section, div, img, body, *{
+  box-sizing: border-box;
+  font-family: 'Arial';
+}
+
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  justify-content: center;
+  gap: 30px 10px;
+  padding: 20px 45px;
+
+  &__card {
+    width: 220px;
+    height: 241px;
+    overflow: hidden;
+    transition: transform 1s linear;
+
+    &:hover {
+      overflow: visible;
+      z-index: 1;
+      transform: scale(1.2);
+    }
+  }
+}
+
+
+.person {
+  height: 287px;
+  border-radius: 10px;
+  overflow: hidden;
+  //background: pink;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    background: #eee;
+
+    & >  .person__photo > img {
+      border-radius: 25%;
+    }
+  }
+
+
+
+
+  &__photo {
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    & > img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      transition: border-radius 1s linear;
+    }
+  }
+
+  &__rank {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 84px;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    right: 10px;
+
+    border-radius: 50%;
+    background: #fff;
+    color: #8B0000;
+
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__details {
+    margin: 8px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 53px;
+    justify-content: space-between;
+
+    &--name {
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+      color: #2F4F4F;
+    }
+
+    &--extra {
+      font-size: 18px;
+      line-height: 21px;
+      color: #000;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .people {
+    grid-template-columns: repeat(4, 220px);
+  }
+}
